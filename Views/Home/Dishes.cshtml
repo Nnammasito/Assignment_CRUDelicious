@@ -4,7 +4,8 @@
 @model Dishe
 <div class="text-center">
     <h1 class="display-4">Add a new Dish!</h1>
-    <p><a>Home</a>|<a>Add a Dish</a></p>
+    <p><a asp-action="Index" asp-controller="Home">Home</a> | <a asp-action="Dishes" asp-controller="Home">Add a
+            Dish</a></p>
     <div>
         <form asp-action="CreateDishes" asp-controller="Home" method="post">
             <div>
@@ -35,7 +36,7 @@
             </div>
             <div>
                 <label asp-for="Description">Description</label>
-                <textarea asp-for="Description" maxlength="45" cols="30" rows="10"></textarea>
+                <textarea asp-for="Description" cols="30" rows="10"></textarea>
                 <span asp-validation-for="Description"></span>
             </div>
             <button type="submit" class="btn btn-primary">Add Dish</button>
