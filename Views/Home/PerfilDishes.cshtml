@@ -1,0 +1,33 @@
+@model Dishe
+@{
+    ViewData["Title"] = "Perfil Dishes Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">@Model.Name</h1>
+    <p><a asp-action="Index" asp-controller="Home">Home</a> | <a asp-action="Dishes" asp-controller="Home">Add a
+            Dish</a></p>
+</div>
+<div>
+    <h4>@Model.Name by @Model.Chef</h4>
+    <hr>
+    <div>
+        <p>Id: @Model.DisheId</p>
+        <p>Description: @Model.Description</p>
+        <p>Calories: @Model.Calories</p>
+        <p>Tastiness: @Model.Tastiness</p>
+    </div>
+</div>
+<div class="text-center">
+    <form asp-action="RemoveDishe" asp-controller="Home" asp-route-id="@Model.DisheId" method="post">
+        <button type="submit">
+            Delete
+        </button>
+    </form>
+    <form asp-action="EditDishes" asp-controller="Home" asp-route-id="@Model.DisheId" method="get">
+
+        <button type="submit">
+            Edit
+        </button>
+    </form>
+</div>
